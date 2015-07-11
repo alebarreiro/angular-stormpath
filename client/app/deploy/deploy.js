@@ -6,6 +6,9 @@ angular.module('dashboardApp')
       .state('deploy', {
         url: '/deploy',
         templateUrl: 'app/deploy/deploy.html',
-        controller: 'DeployCtrl'
+        controller: 'DeployCtrl',
+        sp: {
+          authenticate: true
+        }
       });
   });

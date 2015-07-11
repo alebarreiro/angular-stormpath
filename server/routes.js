@@ -11,6 +11,13 @@ var spMiddleware = stormpathExpressSdk.createMiddleware();
 
 module.exports = function(app) {
 
+  /*
+   This will attach the following route handlers to our Express app:
+    POST /oauth/token      - accept the login form POST, return an access token
+    POST /api/users        - for creating new users
+    GET /api/users/current - info about current user, as permitted by the access token
+    GET /logout            - end current token, destroy access token
+   */
   spMiddleware.attachDefaults(app);
 
   // Insert routes below
@@ -27,10 +34,4 @@ module.exports = function(app) {
     });
 };
 
-/*
-This will attach the following route handlers to our Express app:
- POST /oauth/token      - accept the login form POST, return an access token
- POST /api/users        - for creating new users
- GET /api/users/current - info about current user, as permitted by the access token
- GET /logout            - end current token, destroy access token
- */
+
